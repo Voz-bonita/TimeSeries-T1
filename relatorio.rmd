@@ -1,0 +1,28 @@
+---
+title: Trabalho Prático 1
+subtitle: Análise de Séries Temporais
+author: 
+    - "Amanda Furtado Nunes Rocha 202064835"
+    - "José Vítor Barreto Porfírio 190089971"
+    - "Luiz Gustavo Jordao Graciano 180137786"
+date: "03/05/2023"
+echo: false
+output: pdf_document
+header-includes:
+  - \usepackage{indentfirst}
+  - \usepackage{booktabs}
+  - \usepackage{xcolor}
+  - \setlength{\parindent}{10ex}
+  - \renewcommand{\tablename}{Tabela}
+  - \renewcommand{\figurename}{Figura}
+  - \renewcommand{\and}{\\}
+classoption: a4paper, table
+---
+
+# Item a)
+
+# Item b)
+
+# Item c)
+
+# Item d)
