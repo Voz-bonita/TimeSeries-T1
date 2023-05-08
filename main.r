@@ -5,8 +5,7 @@ PERIOD_TO_VALUE <- c("QUARTERLY" = 4, "MONTHLY" = 1)
 ids <- c(1277, 1903)
 
 current_data <- M3[[ids[1]]]
-current_data %>% plot()
-current_data$n
+
 xy <- c(as.vector(current_data$x), as.vector(current_data$xx))
 xy_time <- c(as.vector(time(current_data$x)), as.vector(time(current_data$xx)))
 
