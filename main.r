@@ -1,4 +1,5 @@
-pacman::p_load("Mcomp", "dplyr", "ggplot2")
+pacman::p_load("Mcomp", "dplyr")
+source("./auxiliar.r", encoding = "UTF-8")
 
 PERIOD_TO_VALUE <- c("QUARTERLY" = 4, "MONTHLY" = 1)
 ids <- c(1277, 1903)
@@ -18,22 +19,11 @@ plot_df <- data.frame(
     )
 )
 
-ggplot(data = plot_df) +
-    geom_line(aes(x = `Ano`, y = `Y`, color = `Tipo`), size = 1) +
-    scale_color_manual(values = c("red", "black")) +
-    theme_bw()
-
-
 period_value <- PERIOD_TO_VALUE[current_data$period]
-seasonal_obs_date <- plot_df[["Ano"]][
-    as.numeric(rownames(plot_df)) %% period_value == 0
-]
 
-ggplot(data = plot_df) +
-    geom_line(aes(x = `Ano`, y = `Y`, color = `Tipo`), size = 1) +
-    geom_vline(xintercept = seasonal_obs_date, linetype = "dotted") +
-    scale_color_manual(values = c("red", "black")) +
-    theme_void()
+# Serie seguida de facilitador da analise de sazonalidade
+ggplot_series(plot_df)
+ggplot_series(plot_df, seasonal_lines = TRUE, period_value)
 
 xy_train <- current_data$x
 stl(xy_train, s.window = "periodic") %>% plot()
