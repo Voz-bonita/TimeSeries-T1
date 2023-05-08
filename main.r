@@ -2,7 +2,7 @@ pacman::p_load("Mcomp", "dplyr", "ggplot2")
 
 ids <- c(1277, 1903)
 
-current_data <- M3[[ids[1]]]
+current_data <- M3[[ids[2]]]
 current_data %>% plot()
 current_data$n
 xy <- c(as.vector(current_data$x), as.vector(current_data$xx))
@@ -13,7 +13,7 @@ plot_df <- data.frame(
     "Y" = xy,
     "Tipo" = c(
         rep("Treino", current_data$n),
-        rep("Teste", length(xy) - current_data$n)
+        rep("Teste", current_data$h)
     )
 )
 
