@@ -30,6 +30,15 @@ A séries sorteadas para o grupo foram as séries de ids 1277 e 1903, das quais 
   \label{fig:linhas1277}
 \end{figure}
 
+Para analisar com mais detalhe o comportamento da série nas observações que são observadas a cada 3 meses (ciclo sazonal), tem-se a figura \ref{fig:linhas1277s}, em que as linhas pontilhadas indicam as marcações dos *lags* sazonais, em geral, observa-se que os *lags* sazonais apresentam vales e o lucro líquido entre os *lags* apresenta crescimento, logo, espera-se encontrar algo semelhante após a decomposição.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=10cm]{assets/Serie1277_s.png}
+  \caption{Gráfico de linhas, com marcações nas sazonalidades, para o lucro líquido descontado impostos, produtos químicos e produtos afins.}
+  \label{fig:linhas1277s}
+\end{figure}
+
 # Item b)
 
 # Item c)
