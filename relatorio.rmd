@@ -1,5 +1,5 @@
 ---
-title: Trabalho Prático 1
+title: Trabalho Prático 1 - Grupo 10
 subtitle: Análise de Séries Temporais
 author: 
     - "Amanda Furtado Nunes Rocha 202064835"
@@ -20,6 +20,15 @@ classoption: a4paper, table
 ---
 
 # Item a)
+
+A séries sorteadas para o grupo foram as séries de ids 1277 e 1903, das quais foi escolhida a série de id 1277 que trata-se de uma série temporal sobre dados de finanças, mais especificamente do lucro líquido descontado impostos, produtos químicos e produtos afins. A série transcorre dados de 1977 a 1991, com períodos trimestrais, e seu gráfico de linhas pode ser visualizado na figura \ref{fig:linhas1277}.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=10cm]{assets/Serie1277_0.png}
+  \caption{Gráfico de linhas para o lucro líquido descontado impostos, produtos químicos e produtos afins.}
+  \label{fig:linhas1277}
+\end{figure}
 
 # Item b)
 
