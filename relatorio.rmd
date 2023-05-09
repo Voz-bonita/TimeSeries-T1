@@ -21,7 +21,7 @@ classoption: a4paper, table
 
 # Item a)
 
-A séries sorteadas para o grupo foram as séries de ids 1277 e 1903, das quais foi escolhida a série de id 1277 que trata-se de uma série temporal sobre dados de finanças, mais especificamente do lucro líquido descontado impostos, produtos químicos e produtos afins. A série transcorre dados de 1977 a 1991, com períodos trimestrais, e seu gráfico de linhas pode ser visualizado na figura \ref{fig:linhas1277}.
+A séries sorteadas para o grupo foram as séries de ids 1277 e 1903, das quais foi escolhida a série de id 1277 que trata-se de uma série temporal sobre dados de finanças, mais especificamente do lucro líquido descontado impostos, produtos químicos e produtos afins. A série transcorre dados de 1977 a 1991, com períodos trimestrais, e seu gráfico de linhas pode ser visualizado na figura \ref{fig:linhas1277}, da qual já é possível perceber que a série tem uma tendência positiva no panorama geral, com 2 períodos de queda mais acentuada, portanto espera-se que a decomposição capte esse aspecto da série na tendência.
 
 \begin{figure}[!ht]
   \centering
