@@ -39,6 +39,15 @@ Para analisar com mais detalhe o comportamento da série nas observações que s
   \label{fig:linhas1277s}
 \end{figure}
 
+Para a decomposição da série, foi escolhida a decomposição STL, para a qual foi ajustado `s.window = {3, 5, 7, 9}`. Pode-se observar pela figura \ref{fig:linhas1277stl} que a tendência e sazonalidade foram captadas assim como esperado, de acordo com o tamanho do `s.window` obteve-se ajustes bons para os resíduos a partir de tamanho `5`, porém para tamanhos maiores a sazonalidade toma uma forma similar à constante após os grandes vales identificados. Ou seja, uma vez que a sazonalidade se parece mais com o comportamento da série original para `s.window = 5` e o comportamento dos resíduos se parece aleatório (sem sobra de sazonalidade), decidiu-se que essa é a janela mais adequada para a decomposição.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=15cm]{assets/Serie1277_stl.png}
+  \caption{Gráficos de linhas da decomposição STL para a série do lucro líquido descontado impostos, produtos químicos e produtos afins.}
+  \label{fig:linhas1277stl}
+\end{figure}
+
 # Item b)
 
 # Item c)
