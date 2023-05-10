@@ -30,7 +30,7 @@ xy_train <- current_data$x
 
 windows <- seq(3, 9, by = 2)
 decompositions <- map(windows, ~ stl(xy_train, s.window = .) %>%
-    autoplot() + theme_bw())
+    autoplot() + theme_bw() + ggtitle(glue("s.window = {.}")))
 args_ <- decompositions
 args_[["ncol"]] <- 4
 do.call(ggarrange, args_) %>%
