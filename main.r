@@ -1,4 +1,4 @@
-pacman::p_load("Mcomp", "dplyr", "glue")
+pacman::p_load("Mcomp", "dplyr", "glue", "forecast", "ggpubr", "purrr")
 source("./auxiliar.r", encoding = "UTF-8")
 
 PERIOD_TO_VALUE <- c("QUARTERLY" = 4, "MONTHLY" = 1)
@@ -27,4 +27,11 @@ ggplot_series(plot_df, seasonal_lines = TRUE, period_value) %>%
     ggsave(glue("assets/Serie{ID}_s.png"), .)
 
 xy_train <- current_data$x
-stl(xy_train, s.window = "periodic") %>% plot()
+
+windows <- seq(3, 9, by = 2)
+decompositions <- map(windows, ~ stl(xy_train, s.window = .) %>%
+    autoplot() + theme_bw())
+args_ <- decompositions
+args_[["ncol"]] <- 4
+do.call(ggarrange, args_) %>%
+    ggsave(glue("assets/Serie{ID}_stl.png"), .)
