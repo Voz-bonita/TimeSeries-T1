@@ -72,6 +72,17 @@ Haja vista que a série é não estacionária, então é necessário aplicar dif
 
 __Obs:__ A função `nsdiffs` do `R` retornou `0`, indicando que diferenciações sazonais não são necessárias.
 
+### ACF e PACF
+
+Visando derminar os parâmetros remanescentes do modelo, foram determinados os valores das autocorrelações amostrais (FAC) e os excessos da correlação a cada aumento do parâmetro autoregressivo (FACP) para todos os *lags* possíveis, apresentados por meio dos gráficos FAC e FACP na figura \ref{fig:acfpacf1277}. Pode-se observar do gráfico FAC que há correlações significativas para os *lags* 0 e 1, com quebra no 1, indicando que o modelo é da família `ARIMA(p, 2, 1)`. Já o gráfico FACP apresenta valores significativos para o lag 1, com quebra no 1, concluindo que o modelo é o `ARIMA(1, 2, 1)`. Vale notar que em ambos os casos não houveram valores significativos nos *lags* sazonais, indicando que em termos dos modelos `SARIMA` os parâmetros `P` e `Q` são nulos, uma vez que pela análise de tendência `D = 0`, então de fato esté é um modelo `ARIMA(1, 2, 1)`.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=10cm]{assets/Serie1277_diferenciada.png}
+  \caption{Gráficos FAC e FACP, respectivamente, para a série diferenciada do lucro líquido descontado impostos, produtos químicos e produtos afins.}
+  \label{fig:acfpacf1277}
+\end{figure}
+
 # Item c)
 
 # Item d)
