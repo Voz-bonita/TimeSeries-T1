@@ -54,40 +54,40 @@ dev.off()
 
 # Dado que notamos uma quebra no p = 3, se faz necessária uma correção pela média móvel (q = 3), assim temos que investigar qual é o melhor modelo P=0 e Q=3.
 
-melhor_p <- c()
+# melhor_p <- c()
 
-melhor_q <- c()
+# melhor_q <- c()
 
-melhor_AICc <- 1e308
+# melhor_AICc <- 1e308
 
-AICc <- c()
+# AICc <- c()
 
-for (p in 0:3) {
-  for (q in 0:3) {
-    fit <- Arima(serie_t, order = c(p, 3, q), seasonal = c(0, 1, 1))
+# for (p in 0:3) {
+#   for (q in 0:3) {
+#     fit <- Arima(serie_t, order = c(p, 3, q), seasonal = c(0, 1, 1))
 
-    if (fit$aicc < melhor_AICc) {
-      melhor_AICc <- fit$aicc
+#     if (fit$aicc < melhor_AICc) {
+#       melhor_AICc <- fit$aicc
 
-      melhor_p <- c(melhor_p, p)
+#       melhor_p <- c(melhor_p, p)
 
-      melhor_q <- c(melhor_q, q)
+#       melhor_q <- c(melhor_q, q)
 
-      AICc <- c(AICc, melhor_AICc)
-    }
-  }
-}
+#       AICc <- c(AICc, melhor_AICc)
+#     }
+#   }
+# }
 
-dt <- data.frame("p" = melhor_p, "q" = melhor_q, "Valor de AICc" = AICc)
+# dt <- data.frame("p" = melhor_p, "q" = melhor_q, "Valor de AICc" = AICc)
 
-dt
+# dt
 
-# Pelos critério de menor AICc, o modelo escolhido é o p = 0 e q = 2. SARIMA(0,1,2)x(0,1,1)
+# # Pelos critério de menor AICc, o modelo escolhido é o p = 0 e q = 2. SARIMA(0,1,2)x(0,1,1)
 
-modelo <- Arima(serie_est, order = c(0, 1, 2), seasonal = c(0, 1, 1))
+# modelo <- Arima(serie_est, order = c(0, 1, 2), seasonal = c(0, 1, 1))
 
-modelo
+# modelo
 
-# resíduos
+# # resíduos
 
-plot(modelo$residuals)
+# plot(modelo$residuals)
