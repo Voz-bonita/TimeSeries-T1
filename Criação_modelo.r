@@ -1,4 +1,5 @@
 pacman::p_load("Mcomp", "tseries", "dplyr", "glue", "forecast", "ggpubr", "purrr", "ggplot2", "stringr")
+source("./auxiliar.r", encoding = "UTF-8")
 
 # modelo
 
@@ -18,16 +19,18 @@ plot(current_data)
 # out2 = lm(X ~ poly(tempo,6))
 
 # rejeita hipótese de estacionariedade, conforme é observado pelo plot que a série possui uma forte tendência, mostrando-se não estacionária.
-
 kpss.test(serie_t, null = "Trend")
 
 # Para tranformar em uma série estacionária: (raízes unitarias):
 serie_t %>% ndiffs() # Duas diferenciações necessárias
-serie_est <- diff(serie_t, differences = 2) %>% diff(lag = 12) # verificar porque 12
+serie_est <- diff(serie_t, differences = 2)
+serie_est %>%
+  autoplot() +
+  geom_line(linewidth = 1.5) +
+  theme_bw()
+ggsave("assets/Serie1277_diferenciada.png")
 
-plot(serie_est, main = "Série Estacionária")
-
-# Obtermos a série estacionária após as diferenciações
+# Obtemos a série estacionária após as diferenciações
 
 
 ## Gráficos ACF e PACF
