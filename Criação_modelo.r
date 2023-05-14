@@ -19,7 +19,7 @@ plot(current_data)
 
 # rejeita hipótese de estacionariedade, conforme é observado pelo plot que a série possui uma forte tendência, mostrando-se não estacionária.
 
-kpss.test(current_data$x)
+kpss.test(serie_t, null = "Trend")
 
 # Para tranformar em uma série estacionária: (raízes unitarias):
 serie_t %>% ndiffs() # Duas diferenciações necessárias
