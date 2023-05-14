@@ -48,6 +48,8 @@ Para a decomposição da série, foi escolhida a decomposição STL, para a qual
   \label{fig:linhas1277stl}
 \end{figure}
 
+\clearpage
+
 # Item b)
 
 ### Presença de tendência
@@ -65,12 +67,14 @@ Haja vista que a série é não estacionária, então é necessário aplicar dif
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=15cm]{assets/Serie1277_diferenciada.png}
+  \includegraphics[width=10cm]{assets/Serie1277_diferenciada.png}
   \caption{Gráficos de linhas para a série, diferenciada duas vezes, do lucro líquido descontado impostos, produtos químicos e produtos afins.}
   \label{fig:linhas1277est}
 \end{figure}
 
 __Obs:__ A função `nsdiffs` do `R` retornou `0`, indicando que diferenciações sazonais não são necessárias.
+
+\clearpage
 
 ### ACF e PACF
 
