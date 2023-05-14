@@ -60,7 +60,7 @@ for(p in 0:3){
   
   for(q in 0:3){
     
-    fit = Arima(serie_t, order = c(p,3,q), seasonal = c(0,1,1))
+    fit = Arima(serie_t, order = c(p,1,q), seasonal = c(0,1,1))
     
     if(fit$aicc < melhor_AICc){
       
