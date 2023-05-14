@@ -48,11 +48,11 @@ pacf(serie_est, lag.max = 12*7)
 
 # Dado que notamos uma quebra no p = 3, se faz necessária uma correção pela média móvel (q = 3), assim temos que investigar qual é o melhor modelo P=0 e Q=3. 
 
-melhor_AICc = Inf
-
 melhor_p = c()
 
 melhor_q = c()
+
+melhor_AICc = 1e308
 
 AICc = c()
 
