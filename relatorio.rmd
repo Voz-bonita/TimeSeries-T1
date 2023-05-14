@@ -59,6 +59,17 @@ $$Tendência \approx 0.304; p-valor < 0.01$$
 
 Portanto, rejeita-se a hipótese nula $H_0$, uma vez que o p-valor obtido foi inferior ao nível de significância fixado, isto é, conclui-se pelo teste que a série não é estacionária e apresenta tendência.
 
+### Correções para a tendência
+
+Haja vista que a série é não estacionária, então é necessário aplicar diferenciações recursivas à série até que se torne estacionária, um método possível para encontrar o número de diferenciações é aplicar uma diferenciação e conduzir o teste KPSS, caso rejeite a hipótese nula novamente, então é feita uma nova diferenciação e aplica-se o teste KPSS, repetindo esse procedimento até que a série se torne estacionária. No `R` a função `ndiffs` implementa o algoritmo descrito e retornou `2`, indicando que devem ser feitas duas diferenciações, logo, o modelo escolhido será da forma `ARIMA(p, 2, q)` e o gráfico da série diferenciada pode ser observado por meio figura \ref{fig:linhas1277est}, o gráfico indica um processo que visualmente não apresenta tendência.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=15cm]{assets/Serie1277_diferenciada.png}
+  \caption{Gráficos de linhas para a série, diferenciada duas vezes, do lucro líquido descontado impostos, produtos químicos e produtos afins.}
+  \label{fig:linhas1277est}
+\end{figure}
+
 # Item c)
 
 # Item d)
