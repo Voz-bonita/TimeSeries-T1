@@ -34,12 +34,15 @@ serie_est %>% nsdiffs() # 0
 # Obtemos a série estacionária após as diferenciações
 
 
+png("assets/Serie1277-acf_pacf.png")
 ## Gráficos ACF e PACF
+par(mfrow = c(1, 2))
+acf(serie_est, lag.max = length(serie_est))
+# ACF 0 e 1 diferentes de 0 com quebra no 1
+pacf(serie_est, lag.max = length(serie_est))
+# PACF 1 diferente de 0 com quebra no 1
+dev.off()
 
-acf(serie_est, lag.max = 12 * 7)
-# primeiro elemento sempre 1, com uma leve convergência para 0.
-
-pacf(serie_est, lag.max = 12 * 7)
 
 # A quebra é logo no lag 3. (?)
 
