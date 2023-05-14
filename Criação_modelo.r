@@ -30,6 +30,7 @@ serie_est %>%
   theme_bw()
 ggsave("assets/Serie1277_diferenciada.png")
 
+serie_est %>% nsdiffs() # 0
 # Obtemos a série estacionária após as diferenciações
 
 

@@ -70,6 +70,8 @@ Haja vista que a série é não estacionária, então é necessário aplicar dif
   \label{fig:linhas1277est}
 \end{figure}
 
+__Obs:__ A função `nsdiffs` do `R` retornou `0`, indicando que diferenciações sazonais não são necessárias.
+
 # Item c)
 
 # Item d)
