@@ -22,7 +22,7 @@ plot(current_data)
 kpss.test(current_data$x)
 
 # Para tranformar em uma série estacionária: (raízes unitarias):
-
+serie_t %>% ndiffs() # Duas diferenciações necessárias
 serie_est <- diff(serie_t, differences = 2) %>% diff(lag = 12) # verificar porque 12
 
 plot(serie_est, main = "Série Estacionária")
