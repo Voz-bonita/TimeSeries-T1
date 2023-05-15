@@ -3,7 +3,7 @@ source("./auxiliar.r", encoding = "UTF-8")
 
 # modelo
 
-current_data <- M3[[1227]]
+current_data <- M3[[1277]]
 serie_t <- current_data$x
 
 PERIOD_TO_VALUE <- c("QUARTERLY" = 4, "MONTHLY" = 1)
@@ -23,7 +23,7 @@ kpss.test(serie_t, null = "Trend")
 
 # Para tranformar em uma série estacionária: (raízes unitarias):
 serie_t %>% ndiffs() # Duas diferenciações necessárias
-serie_est <- diff(serie_t, differences = 2)
+serie_est <- diff(serie_t, differences = 1)
 serie_est %>%
   autoplot() +
   geom_line(linewidth = 1.5) +
