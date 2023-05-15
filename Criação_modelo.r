@@ -22,12 +22,12 @@ plot(current_data)
 kpss.test(serie_t, null = "Trend")
 
 # Para tranformar em uma série estacionária: (raízes unitarias):
-serie_t %>% ndiffs() # Duas diferenciações necessárias
+serie_t %>% ndiffs() # uma diferenciação necessária
 serie_est <- diff(serie_t, differences = 1)
 serie_est %>%
   autoplot() +
   geom_line(linewidth = 1.5) +
-  theme_bw()
+  theme_bw() +
 ggsave("assets/Serie1277_diferenciada.png")
 
 serie_est %>% nsdiffs() # 0
@@ -52,11 +52,11 @@ pacf(serie_est, lag.max = 12*7)
 
 # A quebra é logo no lag 1 com uma fraca convergência para 0.
 
-# Pelo gráfico ACF de autocorrelações parciais, visualizamos que a série não apresenta correlações significativas, o que sugere que não há dependencia de valores atuais em relação aos anteriores.
+# Pelo gráfico ACF de autocorrelações parciais, visualizamos que a série não apresenta correlações significativas, o que sugere que não há dependência de valores atuais em relação aos anteriores.
 
 #SELEÇÃO MODELO SARIMA
 
-# Dado que notamos uma quebra no lag 1, assim é necessário a implementação de um termo de média móvel sazonal, assim temos que investigar qual é o melhor modelo P=0 e Q=1. 
+# Dado que pelos lags sazonais não temos evidência de sazonalidade, temos que investigar qual é o melhor modelo ARIMA(p,d,q), lembrando que d = 1 dado 1 raiz unitaria.
 
 melhor_AICc = 1e308
 
@@ -70,7 +70,7 @@ for(p in 0:3){
   
   for(q in 0:3){
     
-    fit = Arima(serie_t, order = c(p,1,q), seasonal = c(0,1,1))
+    fit = Arima(serie_t, order = c(p,1,q))
     
     if(fit$aicc < melhor_AICc){
       
@@ -89,9 +89,9 @@ dt <- data.frame( "p" = melhor_p, "q" = melhor_q, "Valor de AICc" = AICc)
 
 dt
 
-#Pelos critério de menor AICc, o modelo escolhido é o p = 1 e q = 0. SARIMA(1,1,0)x(0,1,1)
+#Pelos critério de menor AICc, o modelo escolhido é o p = 3 e q = 3. ARIMA(3,1,3)
 
-modelo = Arima(serie_est, order=c(1,1,0), seasonal=c(0,1,1))
+modelo = Arima(serie_est, order=c(3,1,3))
 
 modelo
 
