@@ -38,9 +38,7 @@ png("assets/Serie1277-acf_pacf.png")
 ## Gráficos ACF e PACF
 par(mfrow = c(1, 2))
 acf(serie_est, lag.max = length(serie_est))
-# ACF 0 e 1 diferentes de 0 com quebra no 1
 pacf(serie_est, lag.max = length(serie_est))
-# PACF 1 diferente de 0 com quebra no 1
 dev.off()
 
 
