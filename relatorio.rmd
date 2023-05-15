@@ -57,7 +57,7 @@ Para a decomposição da série, foi escolhida a decomposição STL, para a qual
 Como observado por meio da decomposição realizada no **item a**, a série apresenta tendência de crescimento, para confirmar a suspeita foi feito o teste KPSS ao nível de significância de 5\%, em que
 $$H_0) \text{ O processo é estacionário};~ H_1) \text{ O processo possui raiz unitária}$$
 a estatística do teste e seu p-valor foram
-$$Tendência \approx 0.304; p-valor < 0.01$$
+$$Tendência \approx 0.205; p-valor approx 0.014$$
 
 Portanto, rejeita-se a hipótese nula $H_0$, uma vez que o p-valor obtido foi inferior ao nível de significância fixado, isto é, conclui-se pelo teste que a série não é estacionária e apresenta tendência.
 
