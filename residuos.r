@@ -6,8 +6,6 @@ serie_t <- current_data$x
 
 PERIOD_TO_VALUE <- c("QUARTERLY" = 4, "MONTHLY" = 1)
 
-serie_est <- diff(serie_t, differences = 1)
-
 #
 
 # Seleção modelo
@@ -15,16 +13,12 @@ serie_est <- diff(serie_t, differences = 1)
 #
 
 
-modelo = Arima(serie_est, order=c(3,1,3))
-
-modelo
-
+(modelo = Arima(serie_t, order=c(3,1,3)))
 plot(modelo$residuals)
 
 #resíduos
 
-residuo = modelo$residuals %>% window(start = c(1978,1))
-
+residuo <- modelo$residuals
 plot(residuo, main = "Resíduos sem 0's da inicialização")
 
 
