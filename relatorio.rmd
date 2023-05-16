@@ -122,11 +122,20 @@ p & q & AICc\\
 \end{tabular}
 \end{table}
 
+\clearpage
+
 # Item c)
 ### Análise dos resíduos do modelo selecionado
 A análise do modelo selecionado é realizada através dos gráficos da série de resíduos sem zeros na inicialização, de normalidade e do ACF.
 
-Pelo primeiro gráfico acima nota-se a presença de ruído branco, pois os pontos não fogem de 0, com variação constante ao longo do tempo. Pelo  ACF constata-se que a série não possui autocorrelações siginificativas, pois as autocorrelações dos lags variam dentro do intervalo de confiança. 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=10cm]{assets/residuos1277.png}
+  \caption{Gráficos de linha, qqplot e acf dos resíduos, respectivamente, para o modelo `ARIMA(3, 1, 3)`.}
+  \label{fig:res1277}
+\end{figure}
+
+Pelo primeiro gráfico da figura \ref{fig:res1277} nota-se a presença de ruído branco, pois os pontos não fogem de 0, com variação constante ao longo do tempo. Pelo  ACF constata-se que a série não possui autocorrelações siginificativas, pois as autocorrelações dos lags variam dentro do intervalo de confiança. 
 
 A interpretação  dos gráficos pode ser confirmada pelos testes estatísticos. Assim, considerando um nível de significância de 0,05, os testes de Shapiro Wilk, Ljung-Box e KPS apresentaram p valor de 0,7139, 0,9389 e maior que 0,1 respectivamente, de forma que não há evidências para rejeitar a hipotése nula. Conclui-se que a série é estacionária, apresenta normalidade e é independente.
 
