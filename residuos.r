@@ -14,19 +14,12 @@ PERIOD_TO_VALUE <- c("QUARTERLY" = 4, "MONTHLY" = 1)
 
 
 (modelo = Arima(serie_t, order=c(3,1,3)))
-plot(modelo$residuals)
-
-#resíduos
-
 residuo <- modelo$residuals
-plot(residuo, main = "Resíduos sem 0's da inicialização")
-
-
 
 # Visualização 
 
+png("assets/residuos1277.png")
 par(mfrow = c(1,3))
-
 plot(residuo);
 qqnorm(residuo);
 qqline(residuo)
