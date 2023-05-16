@@ -89,7 +89,38 @@ Visando derminar os parâmetros remanescentes do modelo, foram determinados os v
 
 ### Escolha de p e q
 
+Realizando um procedimento de busca pelos parâmetros `p` e `q` do modelo, tem-se pelo AIC corrigido que o melhor modelo encontrado foi o modelo `ARIMA(3, 1, 3)`, com um AICc de 921.57.
 
+\begin{table}[!h]
+
+\caption{\label{tab:params_search}AICc calculados para tamanhos pequenos dos parâmetros p e q}
+\centering
+\begin{tabular}[t]{rrr}
+\toprule
+p & q & AICc\\
+\midrule
+\cellcolor{gray!6}{3} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{921.57}\\
+3 & 2 & 921.65\\
+\cellcolor{gray!6}{3} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{926.46}\\
+3 & 0 & 927.29\\
+\cellcolor{gray!6}{2} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{931.91}\\
+\addlinespace
+2 & 2 & 934.87\\
+\cellcolor{gray!6}{0} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{936.62}\\
+1 & 3 & 937.65\\
+\cellcolor{gray!6}{0} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{938.85}\\
+1 & 1 & 938.85\\
+\addlinespace
+\cellcolor{gray!6}{0} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{939.20}\\
+2 & 1 & 940.34\\
+\cellcolor{gray!6}{1} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{941.17}\\
+2 & 0 & 942.33\\
+\cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{943.36}\\
+\addlinespace
+0 & 0 & 951.33\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 # Item c)
 

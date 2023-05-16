@@ -25,9 +25,9 @@ kpss.test(serie_t, null = "Trend")
 serie_t %>% ndiffs() # uma diferenciação necessária
 serie_est <- diff(serie_t, differences = 1)
 serie_est %>%
-  autoplot() +
-  geom_line(linewidth = 1.5) +
-  theme_bw()
+    autoplot() +
+    geom_line(linewidth = 1.5) +
+    theme_bw()
 ggsave("assets/Serie1277_diferenciada.png")
 
 serie_est %>% nsdiffs() # 0
@@ -45,40 +45,19 @@ dev.off()
 
 # Dado que pelos lags sazonais não temos evidência de sazonalidade, temos que investigar qual é o melhor modelo ARIMA(p,d,q), lembrando que d = 1 dado 1 raiz unitaria.
 
-melhor_AICc <- 1e308
-
-melhor_p <- c()
-
-melhor_q <- c()
-
-AICc <- c()
+p_search <- c()
+q_search <- c()
+AICc_search <- c()
 
 for (p in 0:3) {
-  for (q in 0:3) {
-    fit <- Arima(serie_t, order = c(p, 1, q))
-
-    if (fit$aicc < melhor_AICc) {
-      melhor_AICc <- fit$aicc
-
-      melhor_p <- c(melhor_p, p)
-
-      melhor_q <- c(melhor_q, q)
-
-      AICc <- c(AICc, melhor_AICc)
+    for (q in 0:3) {
+        fit <- Arima(serie_t, order = c(p, 1, q))
+        AICc_search <- c(AICc_search, fit$aicc)
+        p_search <- c(p_search, p)
+        q_search <- c(q_search, q)
     }
-  }
 }
 
-dt <- data.frame("p" = melhor_p, "q" = melhor_q, "Valor de AICc" = AICc)
-
-dt
-
-# Pelos critério de menor AICc, o modelo escolhido é o p = 3 e q = 3. ARIMA(3,1,3)
-
-modelo <- Arima(serie_est, order = c(3, 1, 3))
-
-modelo
-
-# resíduos
-
-plot(modelo$residuals)
+data.frame(p = p_search, q = q_search, AICc = AICc_search) %>%
+    arrange(AICc) %>%
+    format_tab("\\label{tab:params_search}AICc calculados para tamanhos pequenos dos parâmetros p e q", "latex", digits = 2)
