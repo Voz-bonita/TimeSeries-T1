@@ -63,7 +63,7 @@ Portanto, rejeita-se a hipótese nula $H_0$, uma vez que o p-valor obtido foi in
 
 ### Correções para a tendência
 
-Haja vista que a série é não estacionária, então é necessário aplicar diferenciações recursivas à série até que se torne estacionária, um método possível para encontrar o número de diferenciações é aplicar uma diferenciação e conduzir o teste KPSS, caso rejeite a hipótese nula novamente, então é feita uma nova diferenciação e aplica-se o teste KPSS, repetindo esse procedimento até que a série se torne estacionária. No `R` a função `ndiffs` implementa o algoritmo descrito e retornou `2`, indicando que devem ser feitas duas diferenciações, logo, o modelo escolhido será da forma `ARIMA(p, 2, q)` e o gráfico da série diferenciada pode ser observado por meio figura \ref{fig:linhas1277est}, o gráfico indica um processo que visualmente não apresenta tendência.
+Haja vista que a série é não estacionária, então é necessário aplicar diferenciações recursivas à série até que se torne estacionária, um método possível para encontrar o número de diferenciações é aplicar uma diferenciação e conduzir o teste KPSS, caso rejeite a hipótese nula novamente, então é feita uma nova diferenciação e aplica-se o teste KPSS, repetindo esse procedimento até que a série se torne estacionária. No `R` a função `ndiffs` implementa o algoritmo descrito e retornou `1`, indicando que devem ser feitas duas diferenciações, logo, o modelo escolhido será da forma `ARIMA(p, 1, q)` e o gráfico da série diferenciada pode ser observado por meio figura \ref{fig:linhas1277est}, o gráfico indica um processo que visualmente não apresenta tendência.
 
 \begin{figure}[!ht]
   \centering
@@ -78,7 +78,7 @@ __Obs:__ A função `nsdiffs` do `R` retornou `0`, indicando que diferenciaçõe
 
 ### ACF e PACF
 
-Visando derminar os parâmetros remanescentes do modelo, foram determinados os valores das autocorrelações amostrais (FAC) e os excessos da correlação a cada aumento do parâmetro autoregressivo (FACP) para todos os *lags* possíveis, apresentados por meio dos gráficos FAC e FACP na figura \ref{fig:acfpacf1277}. Pode-se observar do gráfico FAC que há correlações significativas para os *lags* 0 e 1, com quebra no 1, indicando que o modelo é da família `ARIMA(p, 2, 1)`. Já o gráfico FACP apresenta valores significativos para o lag 1, com quebra no 1, concluindo que o modelo é o `ARIMA(1, 2, 1)`. Vale notar que em ambos os casos não houveram valores significativos nos *lags* sazonais, indicando que em termos dos modelos `SARIMA` os parâmetros `P` e `Q` são nulos, uma vez que pela análise de tendência `D = 0`, então de fato esté é um modelo `ARIMA(1, 2, 1)`.
+Visando derminar os parâmetros remanescentes do modelo, foram determinados os valores das autocorrelações amostrais (FAC) e os excessos da correlação a cada aumento do parâmetro autoregressivo (FACP) para todos os *lags* possíveis, apresentados por meio dos gráficos FAC e FACP na figura \ref{fig:acfpacf1277}. Pode-se observar do gráfico FAC que há um decaimento amortizado, indicando que os parâmetros de médias móveis `q` e `Q` devem ser nulos. Já o gráfico FACP apresenta comportamento inconclusivo para os primeiros *lags*, então vale testar valores pequenos dos parâmetros `p` e `q`. Além disso o gráfico FACP não apresentou valores significativos nos *lags* sazonais, indicando que em termos dos modelos `SARIMA` o parâmetro `P` é nulo.
 
 \begin{figure}[!ht]
   \centering
@@ -86,6 +86,10 @@ Visando derminar os parâmetros remanescentes do modelo, foram determinados os v
   \caption{Gráficos FAC e FACP, respectivamente, para a série diferenciada do lucro líquido descontado impostos, produtos químicos e produtos afins.}
   \label{fig:acfpacf1277}
 \end{figure}
+
+### Escolha de p e q
+
+
 
 # Item c)
 
