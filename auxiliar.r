@@ -1,4 +1,4 @@
-pacman::p_load("ggplot2")
+pacman::p_load("ggplot2", "kableExtra")
 
 ggplot_series <- function(current_data, seasonal_lines = FALSE, period_value = 0) {
     xy <- c(as.vector(current_data$x), as.vector(current_data$xx))
@@ -31,4 +31,18 @@ ggplot_series <- function(current_data, seasonal_lines = FALSE, period_value = 0
             theme_void()
     }
     return(plot)
+}
+
+format_tab <- function(df, caption, ...) {
+    tabela <- kable(
+        df,
+        caption = caption,
+        booktabs = T,
+        ...
+    ) %>%
+        kable_styling(
+            latex_options = c("striped", "hold_position"),
+            full_width = F
+        )
+    return(tabela)
 }
