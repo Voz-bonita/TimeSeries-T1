@@ -82,7 +82,7 @@ Visando derminar os parâmetros remanescentes do modelo, foram determinados os v
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=10cm]{assets/Serie1277_diferenciada.png}
+  \includegraphics[width=10cm]{assets/residuos1277.png}
   \caption{Gráficos FAC e FACP, respectivamente, para a série diferenciada do lucro líquido descontado impostos, produtos químicos e produtos afins.}
   \label{fig:acfpacf1277}
 \end{figure}
@@ -125,7 +125,9 @@ p & q & AICc\\
 \clearpage
 
 # Item c)
+
 ### Análise dos resíduos do modelo selecionado
+
 A análise do modelo selecionado é realizada através dos gráficos da série de resíduos sem zeros na inicialização, de normalidade e do ACF.
 
 \begin{figure}[!ht]
