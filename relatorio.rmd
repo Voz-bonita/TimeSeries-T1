@@ -63,7 +63,7 @@ Portanto, rejeita-se a hipótese nula $H_0$, uma vez que o p-valor obtido foi in
 
 ### Correções para a tendência
 
-Haja vista que a série é não estacionária, então é necessário aplicar diferenciações recursivas à série até que se torne estacionária, um método possível para encontrar o número de diferenciações é aplicar uma diferenciação e conduzir o teste KPSS, caso rejeite a hipótese nula novamente, então é feita uma nova diferenciação e aplica-se o teste KPSS, repetindo esse procedimento até que a série se torne estacionária. No `R` a função `ndiffs` implementa o algoritmo descrito e retornou `1`, indicando que devem ser feitas duas diferenciações, logo, o modelo escolhido será da forma `ARIMA(p, 1, q)` e o gráfico da série diferenciada pode ser observado por meio figura \ref{fig:linhas1277est}, o gráfico indica um processo que visualmente não apresenta tendência.
+Haja vista que a série é não estacionária, então é necessário aplicar diferenciações recursivas à série até que se torne estacionária, um método possível para encontrar o número de diferenciações é aplicar uma diferenciação e conduzir o teste KPSS, caso rejeite a hipótese nula novamente, então é feita uma nova diferenciação e aplica-se o teste KPSS, repetindo esse procedimento até que a série se torne estacionária. No `R` a função `ndiffs` implementa o algoritmo descrito e retornou `1`, indicando que devem ser feita uma diferenciação, logo, o modelo escolhido será da forma `ARIMA(p, 1, q)` e o gráfico da série diferenciada pode ser observado por meio figura \ref{fig:linhas1277est}, o gráfico indica um processo que visualmente não apresenta tendência.
 
 \begin{figure}[!ht]
   \centering
