@@ -137,7 +137,7 @@ A análise do modelo selecionado é realizada através dos gráficos da série d
 
 Pelo primeiro gráfico da figura \ref{fig:res1277} nota-se a presença de ruído branco, pois os pontos não fogem de 0, com variação constante ao longo do tempo. Pelo  ACF constata-se que a série não possui autocorrelações siginificativas, pois as autocorrelações dos lags variam dentro do intervalo de confiança. 
 
-A interpretação  dos gráficos pode ser confirmada pelos testes estatísticos. Assim, considerando um nível de significância de 0,05, os testes de Shapiro Wilk, Ljung-Box e KPSS apresentaram p valores de 0,02916, 0,7912 e maior que 0,1 respectivamente, de forma que não há evidências para rejeitar a hipotése nula. Conclui-se que a série é estacionária, apresenta normalidade e é independente.
+A interpretação  dos gráficos pode ser confirmada pelos testes estatísticos. Assim, considerando um nível de significância de 0,05, os testes de Shapiro Wilk, Ljung-Box e KPSS apresentaram p valores de 0,02916, 0,7912 e maior que 0,1 respectivamente, de forma que não há evidências para rejeitar a hipotése nula do segundo e terceiro citados, enquanto para o primeiro há evidências para rejeitar. Dessa forma, conclui-se que a série é estacionária, apresenta normalidade e é independente.
 
 Assim, o modelo selecionado atende os pressupostos necessários para confirmar a adequação.
 
