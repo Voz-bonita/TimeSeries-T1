@@ -82,7 +82,7 @@ Visando derminar os parâmetros remanescentes do modelo, foram determinados os v
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=10cm]{assets/residuos1277.png}
+  \includegraphics[width=10cm]{assets/Serie1277-acf_pacf.png}
   \caption{Gráficos FAC e FACP, respectivamente, para a série diferenciada do lucro líquido descontado impostos, produtos químicos e produtos afins.}
   \label{fig:acfpacf1277}
 \end{figure}
