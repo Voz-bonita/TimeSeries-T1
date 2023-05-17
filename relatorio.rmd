@@ -157,3 +157,8 @@ x_t &= 0.1953x_{t-1} - 0.0672x_{t-2} - 0.0083x_{t-2} + 0.8802x_{t-3} + \\
 \end{align*}
 em que 
 $$\varepsilon_t \sim N(0, 455618)$$
+
+\clearpage
+# Anexo
+
+Códigos disponíveis em \href{https://github.com/Voz-bonita/TimeSeries-T1}{https://github.com/Voz-bonita/TimeSeries-T1}
