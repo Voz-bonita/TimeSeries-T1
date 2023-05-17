@@ -142,3 +142,16 @@ A interpretação  dos gráficos pode ser confirmada pelos testes estatísticos.
 Assim, o modelo selecionado atende os pressupostos necessários para confirmar a adequação.
 
 # Item d)
+
+Seja {x_t} o precesso que descreve a série em estudo, como o modelo escolhido foi `ARIMA(3, 1, 3)`, então abrindo a equação para o modelo escolhido e substituindo os valores ajustados para os parâmetros, tem-se que 
+
+\begin{align*}
+\Phi(B)_3\nabla x_t &= \Theta(B)_3 \varepsilon_t \\
+(1 - \phi_1B - \phi_2B^2 - \phi_3B^3)(x_t - x_{t-1}) &= (1 + \theta_1B + \theta_2B^2 + \theta_3B^3) \varepsilon_t \\
+(1 - \phi_1B - \phi_2B^2 - \phi_3B^3)(x_t - x_{t-1}) &= \varepsilon_t + 0.3055\varepsilon_{t-1} + 0.7668\varepsilon_{t-2} + 0.65925\varepsilon_{t-3}\\
+(1 + 0.80471B + 0.8719B^2 + 0.8802B^3)(x_t - x_{t-1}) &= \varepsilon_t + 0.3055\varepsilon_{t-1} + 0.7668\varepsilon_{t-2} + 0.65925\varepsilon_{t-3}\\
+x_t &= 0.1953x_{t-1} - 0.0672x_{t-2} - 0.0083x_{t-2} + 0.8802x_{t-3} + \\
+&\varepsilon_t + 0.3055\varepsilon_{t-1} + 0.7668\varepsilon_{t-2} + 0.65925\varepsilon_{t-3}\\
+\end{align*}
+em que 
+$$\varepsilon_t \sim N(0, 455618)$$
